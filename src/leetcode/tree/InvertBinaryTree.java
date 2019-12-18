@@ -41,6 +41,7 @@ public class InvertBinaryTree {
      * @return
      */
     public TreeNode invertTree(TreeNode root) {
+        //递归出口
         if (root == null) {
             return null;
         }

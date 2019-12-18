@@ -32,30 +32,33 @@ public class BinaryTreePaths {
 
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> ret = new ArrayList<>();
-        paths(root, ret, "");
+        if (root == null) {
+            return ret;
+        }
+        dfs(root, String.valueOf(root.val), ret);
         return ret;
     }
 
     /**
-     * 递归
+     *
      * @param root
      * @param paths
      * @param path
      */
-    public void paths(TreeNode root, List<String> paths, String path) {
+    public void dfs(TreeNode root, String path, List<String> paths) {
         if (root == null) {
             return;
         }
-        //将当前节点加到路径
-        path += root.val;
-        //如果是叶子节点则添加结果
+        //dfs出口，叶子节点
         if (root.left == null && root.right == null) {
             paths.add(path);
+            return;
         }
-        else {
-            path += "->";
-            paths(root.left, paths, path);
-            paths(root.right, paths, path);
+        if (root.left != null) {
+            dfs(root.left, path + "->" + root.left.val, paths);
+        }
+        if (root.right != null) {
+            dfs(root.right, path + "->" + root.right.val, paths);
         }
     }
 

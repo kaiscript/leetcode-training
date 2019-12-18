@@ -33,9 +33,11 @@ public class PathSum {
             return false;
         }
         sum -= root.val;
+        //递归的出口
         if (root.left == null && root.right ==null && sum == 0) {
             return true;
         }
+        //递归拆解
         return hasPathSum(root.left, sum) || hasPathSum(root.right, sum);
     }
 
