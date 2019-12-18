@@ -39,18 +39,5 @@ public class PathSum {
         return hasPathSum(root.left, sum) || hasPathSum(root.right, sum);
     }
 
-    public void dfs(TreeNode node, int remainSum) {
-        if (node == null) {
-            return;
-        }
-        if (remainSum == 0) {
-            flag = true;
-            return;
-        }
-        remainSum -= node.val;
-        dfs(node.left, remainSum);
-        dfs(node.right, remainSum);
-        remainSum += node.val;
-    }
 
 }
