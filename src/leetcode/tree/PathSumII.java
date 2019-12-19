@@ -47,9 +47,11 @@ public class PathSumII {
         if (root == null) {
             return;
         }
+        //到达叶子节点，判断是否满足条件
         if (root.left == null && root.right == null && remainSum == root.val) {
             paths.add(root.val);
             result.add(new ArrayList<>(paths));
+            //dfs 回溯
             paths.remove(paths.size() - 1);
             return;
         }
@@ -57,6 +59,7 @@ public class PathSumII {
         paths.add(root.val);
         dfs(root.left, remainSum, result, paths);
         dfs(root.right, remainSum, result, paths);
+        //dfs 回溯
         paths.remove(paths.size() - 1);
     }
 
