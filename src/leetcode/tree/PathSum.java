@@ -1,7 +1,5 @@
 package leetcode.tree;
 
-import leetcode.dfsbfs.TreeNode;
-
 /**
  * 112. Path Sum
  * Easy
@@ -26,15 +24,13 @@ import leetcode.dfsbfs.TreeNode;
  */
 public class PathSum {
 
-    public boolean flag = false;
-
     public boolean hasPathSum(TreeNode root, int sum) {
         if (root == null) {
             return false;
         }
         sum -= root.val;
         //递归的出口
-        if (root.left == null && root.right ==null && sum == 0) {
+        if (root.left == null && root.right == null && sum == 0) {
             return true;
         }
         //递归拆解

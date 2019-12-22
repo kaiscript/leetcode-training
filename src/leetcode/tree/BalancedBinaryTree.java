@@ -1,7 +1,5 @@
 package leetcode.tree;
 
-import leetcode.dfsbfs.TreeNode;
-
 /**
  * 110. Balanced Binary Tree
  * Easy
@@ -40,6 +38,31 @@ import leetcode.dfsbfs.TreeNode;
  *
  */
 public class BalancedBinaryTree {
+
+
+    /**
+     * 递归解法,分治法。
+     * 分别判断左右子树是否满足平衡树的条件，递归求解
+     * @param treeNode
+     * @return
+     */
+    public int depth(TreeNode treeNode) {
+        if (treeNode == null) {
+            return 0;
+        }
+        int left = depth(treeNode.left);
+        if (left == -1) {
+            return -1;
+        }
+        int right = depth(treeNode.right);
+        if (right == -1) {
+            return -1;
+        }
+        //如果高度没相差1则证明是平衡树，返回左右子树的最高高度加上本身节点的高度1
+        return Math.abs(left - right) > 1 ? -1 : Math.max(left, right) + 1;
+
+    }
+
 
     class ResultType{
         boolean isBalance;

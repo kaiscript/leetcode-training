@@ -1,7 +1,5 @@
 package leetcode.tree;
 
-import leetcode.dfsbfs.TreeNode;
-
 /**
  * 100. Same Tree
  * Easy

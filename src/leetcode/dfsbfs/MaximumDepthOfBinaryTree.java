@@ -1,5 +1,7 @@
 package leetcode.dfsbfs;
 
+import leetcode.tree.TreeNode;
+
 /**
  * 104. Maximum Depth of Binary Tree
  * Easy
