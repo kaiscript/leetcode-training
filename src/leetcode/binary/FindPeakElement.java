@@ -37,7 +37,7 @@ public class FindPeakElement {
     public int findPeakElement(int[] nums) {
         int start = 0;
         int end = nums.length - 1;
-        //要使得start和end等于时才推出循环，也就是在山顶的时候。如果start<=end ，则会导致退出条件是山顶的下一个坐标
+        //要使得start和end等于时才退出循环，也就是在山顶的时候。如果是while(start<=end) ，则会导致退出条件是山顶的下一个坐标(start+1)
         while (start < end) {
             int mid = start + (end - start) / 2;
             if (nums[mid] < nums[mid + 1]) {
