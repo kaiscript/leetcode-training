@@ -29,6 +29,25 @@ public class ReverseLinkedList {
         return pre;
     }
 
+
+    public ListNode reverseListRe(ListNode head) {
+        if (head == null) {
+            return head;
+        }
+        //反转的是他自己
+        if (head.next == null) {
+            return head;
+        }
+        ListNode last = reverseListRe(head.next);
+        head.next.next = head;
+        head.next = null;
+        return last;
+    }
+
+
+
+
+
     public ListNode reverseListRecursively(ListNode cur) {
         if (cur == null || cur.next == null) {
             return cur;

@@ -14,6 +14,32 @@ package leetcode.linkedList;
  */
 public class ReverseLinkedListII {
 
+    ListNode processer = null;
+
+    public ListNode reverserN(ListNode head, int n) {
+        if (head == null) {
+            return head;
+        }
+        //记录连接的节点
+        if (n == 1) {
+            processer = head.next;
+            return head;
+        }
+        //在head的下一个节点拿到满足条件的链表。所以要n-1
+        ListNode last = reverserN(head.next, n - 1);
+        head.next.next = head;
+        head.next = processer;
+        return last;
+    }
+
+    public ListNode reverseBetweenRecursively(ListNode head, int m, int n) {
+        if (m == 1) {
+            return reverserN(head, n);
+        }
+        head.next = reverseBetweenRecursively(head.next, m - 1, n - 1);
+        return head;
+    }
+
     public ListNode reverseBetween(ListNode head, int m, int n) {
         if (head == null) {
             return null;
