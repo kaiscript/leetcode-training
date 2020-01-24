@@ -1,7 +1,7 @@
 package leetcode.linkedList;
 
 /**
- * 160
+ * 160. 编写一个程序，找到两个单链表相交的起始节点。
  * Write a program to find the node at which the intersection of two singly linked lists begins.
  */
 public class IntersectionOfTwoLinkedLists {
