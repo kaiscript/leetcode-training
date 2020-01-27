@@ -7,8 +7,9 @@ import java.util.Map;
  *
  * 76. Minimum Window Substring
  *
+ * 最小覆盖子串
  * Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).
- *
+ * 给你一个字符串 S、一个字符串 T，请在字符串 S 里面找出：包含 T 所有字母的最小子串。
  * Example:
  *
  * Input: S = "ADOBECODEBANC", T = "ABC"

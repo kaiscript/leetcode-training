@@ -20,6 +20,11 @@ import java.util.Set;
  */
 public class RemoveDuplicatesFromSortedList {
 
+    /**
+     * 当前节点与后个节点相同，跨过后个节点
+     * @param head
+     * @return
+     */
     public ListNode deleteDuplicates(ListNode head) {
 
         ListNode cur = head;

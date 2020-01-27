@@ -5,7 +5,8 @@ import java.util.List;
 
 /**
  * Problem
- * Given an Array of non negative Integers and a number. You need to print all the starting and ending indices of Subarrays having their sum equal to the given integer.
+ * Given an Array of non negative Integers and a number.
+ * You need to print all the starting and ending indices of Subarrays having their sum equal to the given integer.
  * For Example :-
  *
  * Input-int[] arr = {2, 3, 6, 4, 9, 0, 11};
