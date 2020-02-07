@@ -3,39 +3,58 @@ package leetcode.tree;
 /**
  * 100. Same Tree
  * Easy
- * Given two binary trees, write a function to check if they are the same or not.
  *
- * Two binary trees are considered the same if they are structurally identical and the nodes have the same value.
+ * 给定两个二叉树，编写一个函数来检验它们是否相同。
  *
- * Example 1:
+ * 如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。
  *
- * Input:     1         1
+ * 示例 1:
+ *
+ * 输入:       1         1
  *           / \       / \
  *          2   3     2   3
  *
  *         [1,2,3],   [1,2,3]
  *
- * Output: true
- * Example 2:
+ * 输出: true
+ * 示例 2:
  *
- * Input:     1         1
+ * 输入:      1          1
  *           /           \
  *          2             2
  *
  *         [1,2],     [1,null,2]
  *
- * Output: false
- * Example 3:
+ * 输出: false
+ * 示例 3:
  *
- * Input:     1         1
+ * 输入:       1         1
  *           / \       / \
  *          2   1     1   2
  *
  *         [1,2,1],   [1,1,2]
  *
- * Output: false
+ * 输出: false
+ *
+ * 来源：力扣（LeetCode）
+ * 链接：https://leetcode-cn.com/problems/same-tree
+ * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ *
  */
 public class SameTree {
+
+    public boolean isSameTree0(TreeNode p, TreeNode q) {
+        if (p == null && q == null) {
+            return true;
+        }
+        if (p == null || q == null) {
+            return false;
+        }
+        return p.val == q.val && isSameTree0(p.left, q.left) && isSameTree0(p.right, q.right);
+    }
+
+
+
 
     /**
      * 分治思想
