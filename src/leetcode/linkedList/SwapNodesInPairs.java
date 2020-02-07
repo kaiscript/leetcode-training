@@ -28,9 +28,9 @@ public class SwapNodesInPairs {
             current.next = second;
 
             //将second的next指向first，完成旋转
-            current.next.next = first;
+            second.next = first;
             //移动到下个节点开始迭代
-            current = current.next.next;
+            current = first;
         }
         return temp.next;
     }
