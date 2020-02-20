@@ -26,8 +26,9 @@ import java.util.Arrays;
 public class LongestIncreasingSubsequence {
 
     /**
-     * dp[i]：dp[i]的最长上升子序列的长度
+     * dp[i]：以 nums[i]结尾 的最长上升子序列的长度
      * 如果 nums[j] < nums[i], dp[i] = max(dp[i],dp[j] + 1)
+     * base case: dp[i] = 1, 0<=i< length
      * @param nums
      * @return
      */

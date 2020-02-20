@@ -41,6 +41,7 @@ package leetcode.dp;
 public class LongestCommonSubsequence {
 
     /**
+     * 自底向上递推
      * 下标从1开始。
      * dp[i][j] 表示:  text1 子串 [1,i] 和text2 子串 [1,j] 最长公共子序列的长度
      *
