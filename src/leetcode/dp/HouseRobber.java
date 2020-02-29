@@ -30,7 +30,7 @@ package leetcode.dp;
 public class HouseRobber {
 
     /**
-     * dp[i] = 在 i 号房间时，打劫的房间的最高金额
+     * dp[i] = 从 i 号房间开始抢劫，打劫的房间的最高金额
      * //1.不打劫 2.打劫
      * dp[i] = max(dp[i+1],num[i]+dp[i+2])
      *
