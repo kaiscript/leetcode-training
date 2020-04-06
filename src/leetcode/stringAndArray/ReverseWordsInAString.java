@@ -73,7 +73,7 @@ public class ReverseWordsInAString {
         ReverseWordsInAString rs = new ReverseWordsInAString();
 //        System.out.println(rs.reverseWords(str));
 //        System.out.println(rs.reverseWords(str1));
-        String s = rs.reverseWords(str2);
+        String s = rs.reverseWords(str1);
         System.out.println(s);
         System.out.println(s.length());
 
