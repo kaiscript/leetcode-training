@@ -77,6 +77,33 @@ public class CombinationSum {
     }
 
 
+    /**
+     * 用加和的方式也可以求解
+     * 调用入口：dfs(0,0,candidates,target,new ArrayList<>(),res);
+     *
+     * @param start
+     * @param sum
+     * @param candidates
+     * @param target
+     * @param list
+     * @param res
+     */
+    public void dfs(int start, int sum, int[] candidates, int target, List<Integer> list, List<List<Integer>> res) {
+        if (sum > target) {
+            return;
+        }
+
+        if (sum == target) {
+            res.add(new ArrayList(list));
+            return;
+        }
+        for (int i = start; i < candidates.length; i++) {
+            list.add(candidates[i]);
+            dfs(i, sum + candidates[i], candidates, target, list, res);
+            list.remove(list.size() - 1);
+        }
+    }
+
     public static void main(String[] args) {
         CombinationSum cs = new CombinationSum();
         int[] nums = new int[]{2, 2, 3};
